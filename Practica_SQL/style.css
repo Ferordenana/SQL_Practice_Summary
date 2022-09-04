@@ -1,0 +1,47 @@
+*{
+    font-size: 1.25rem;
+}
+
+
+body {
+    margin: 0 15% 0 15%;
+    
+    color: rgb(44, 44, 47);
+    background-color: rgb(204, 204, 204);
+
+    color: rgb(220, 220, 220);
+    background-color: rgb(21, 24, 28); 
+
+}
+
+.theme {
+    color: rgb(44, 44, 47);
+    background-color: rgb(204, 204, 204);
+        
+}
+
+button {
+    margin-left: 25em;
+}
+
+li, div {
+    margin-bottom: 1em;
+}
+
+h2 {
+    text-align: center;
+    color: #1565C0;
+    font-size: 1.25em;
+    
+}
+
+a {
+    color: #0099ff;
+}
+
+span {
+    font-weight: 550;
+}
+
+
+

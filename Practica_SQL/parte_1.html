@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL y Bases de datos Modulo 1</title>
+    <link rel="stylesheet" href="/Practica_SQL/style.css">
+</head>
+<body>
+    <script>
+        function darkMode() {
+  var element = document.body;
+  element.classList.toggle("theme");
+}
+    </script>
+
+    <h3>Terminología a utilizar</h3> 
+    
+
+    <a href="#abajo">Ir a creacion de base de datos</a>
+
+    <button onclick="darkMode()">Dark mode</button>
+    
+    <p><span>● Dato:</span> es la unidad mínima de información, sin sentido en sí misma, pero que adquiere significado en conjunto con otras precedentes de la aplicación que las creó.</p>
+
+    <p><b>● Sistemas de administración de bases de datos relacionales:</b> son un tipo de software específico, <b>dedicado a servir de interfaz entre el motor de bases de datos, la base de datos, el usuario y las aplicaciones que la utilizan.</b> <br> El propósito general de estos sistemas es
+        el de gestionar de manera clara, sencilla y
+        ordenada un conjunto de datos que
+        posteriormente se convertirán en
+        información relevante para una
+        organización.</p>
+
+    <p><b>● Bases de datos:</b> Una base de datos es un conjunto de datos pertenecientes a un mismo contexto y almacenados sistemáticamente para su posterior uso. <br> 
+    En este sentido; una biblioteca puede considerarse una base de datos compuesta en su mayoría por documentos y textos impresos en papel e indexados para su consulta. <br> Actualmente, y debido al desarrollo tecnológico de campos como la informática y la electrónica, la mayoría de las bases de datos están en formato digital.</p>
+
+    <p>Una base de datos es una colección de datos organizados y
+        estructurados según un determinado modelo de información
+        (lógica de negocio) que refleja la relación entre ellos.</p>
+
+        <p>Cuando no existian las computadoras, toda la informacion que se debia "almacenar" era escrita en un papel y este era guardado en una carpeta. <br> A su vez, cada carpeta, era almacenada en un fichero.  Papel ---> Carpeta ---> Fichero</p>
+        <p>Una base de datos busca replicar de manera digital este sistema </p>
+
+        <p><b>Una base de datos es un repositorio en el que se almacenan las tablas, es decir, cumple la funcion de un fichero.</b> Dentro de la base de datos, nosotros podemos almancenar tablas: es decir, carpetas. Y las hojas de papel en las que anteriormente se escribia la informacion, serian los registros de las tablas.  </p>
+
+    <p><b>● Motor de Base de datos (DBMS/RDBMS):</b> Sistema que permite la creacion, gestion y administracion de base de datos (engine) <br> Algunas de los principales motores de bases de datos son:
+    <ul>Oracle</ul>
+    <ul>MySQL</ul>
+    <ul>Microsoft SQL Server</ul>
+    <ul>SQLite</ul>
+    <ul>PostgreSQL</ul></p>
+
+    <p><b>● MySQL(RDBMS):</b> Motor de base de datos multihilo y multiusuario utilizado en
+        la gran parte de las páginas web actuales. <br> Ventajas de MySQL: 
+        <ul>● Facilidad de uso y gran rendimiento.
+        </ul>
+        <ul>● Facilidad para instalar y configurar.
+        </ul>
+        <ul>● Soporte multiplataforma (Windows, Linux).
+        </ul>
+        <ul>● Soporte SSL (Secure Sockets layer). <br> (Es un protocolo de seguridad que crea un enlace cifrado entre un servidor web y un navegador web.)
+        </ul>
+    <ul>La principal desventaja es la escalailidad, es decir, no trabaja de manera eficiente con bases de datos muy grandes que superan un determinado tamaño.</ul></p>
+    <p>MySQL fue desarrollado por IBM durante la decada del 70, basado en un modelo relacional. En el año 2008 MySQL fue absorbido por Oracle, empresa que aun mantiene MySQL como proyecto comunitario, asi como su variante Enterprise. </p>
+
+        <p>MariaDB version open source de MySQL que solia ser open source, pero ahora es de Oracle</p>
+
+
+    <p><b>Modelo relacional:</b>Modelo de organización y gestión de bases de datos consistente en el almacenamiento de datos en tablas compuestas por filas, o tuplas, y columnas o campos.</p>
+
+        <p><b>● SQL (Structured Query Language): </b>Lenguaje que permite interactuar
+            con la base de datos relacional en la que se almacenan los datos de
+            forma tabular (forma de tablas). <br> <b>El objetivo principal del motor SQL es Create, Read, Update and Delete. CRUD de una base de datos.</b> <br>Existen varios tipos de motores SQL y
+            todos tienen una arquitectura diferente,
+            pero realizan el mismo objetivo que
+            incluye operaciones CRUD en la base de
+            datos. </p>
+
+            <p><b>Tabla:</b>objeto principal de una base de datos, ya que en ellas se
+                almacenarán los datos.</p>
+                <li>Las tablas tienen un nombre y debe ser unico en toda la base de datos.</li>
+                <li>Estan compuestas por registros (filas) y campos (columnas)</li>
+                <li>Los registros y campos pueden estar en diferentes ordenes.</li>
+                <li>Una base de datos puede contener varias tablas.</li>
+
+            <p><b>CRUD</b></p>
+            <p>El objetivo del motor SQL es:</p>
+            <li>Crear bases de datos y tablas (Create)</li>
+            <li>Leer la informacion contenida en las tablas (Retrieve)</li>
+            <li>Actualizar datos almacenados en las tablas (Update)</li>
+            <li>Eliminar datos almacenados en las tablas (Delete)</li>
+            <p>Existen varios tipos de motores SQL y todos tienen una arquitectura diferente, pero realizan el mismo objetivo que incluye operaciones CRUD en la base de datos y muchas otras caracteristicas.</p>
+
+
+            <p><b>● Repositorio de datos:</b>Un repositorio, depósito, o almacén de
+            datos es un sitio centralizado donde se
+            almacena y mantiene información digital,
+            habitualmente de bases de datos o archivos
+            informáticos. <br> 
+            Los repositorios de datos pueden
+            distribuirse sirviéndose de una red
+            informática como Internet o en un medio
+            físico. Pueden ser de acceso público o
+            pueden estar protegidos y necesitar de una
+            autentificación previa. <br>● A diferencia de lascomputadoras
+            personales, los repositorios suelen contar
+            con sistemas de respaldo (Backup) para
+            recuperación, lo que hace que la
+            información se pueda recuperar en el
+            caso de que la/s máquina/s donde residen
+            quede inutilizable.</p>
+
+            <p><b>Aplicaciones:</b> usan el motor de base de
+            datos para acceder a la información y
+            luego poder presentarla al usuario. Las
+            aplicaciones son desarrolladas por
+            desarrolladores (programadores) y pueden
+            ser escritas en diversos lenguajes de programacion.</p>
+
+        <p><b>Usuarios:</b> son las personas que pueden
+        acceder a los datos. Pueden ser catalogados
+        como usuarios finales, usuarios
+        avanzados, desarrolladores o
+        administradores.
+        </p>
+
+        <h2>Tipos de datos</h2>
+        <p>Al diseñar tablas dentro de una base de datos, se
+            deberá <b>
+                especificar el tipo de datos y la capacidad
+                que podrá almacenar cada campo.
+            </b></p>
+          
+            <p>Basicamente, MySQL admite dos tipos de datos: numeros y cadenas de caracteres. Junto a estos dos grandes grupos, se admiten otros tipos de datos especiales: formatos de fecha, logicos, etc.</p>  
+
+
+            <h2>Cadenas de texto o Caracteres</h2>
+
+            <p>Las cadenas de texto se utilizan para almacenar una serie de caracteres, palabras y frases de texto en donde cada caracter es lo mismo que un byte.</p>
+
+            <li><span>CHAR </span>Este tipo de dato se utiliza para almacenar cadenas de longitud fija. Su longitud abarca desde 1 a 255 caracteres, <span>Un campo CHAR ocupara siempre el maximo de longitud que le hayamos asignado, aunque el tamaño del dato sea menor</span></li>
+            <li><b>VARCHAR </b> Al igual que el anterior se utiliza para almacenar cadenas, en el mismo rango de 1-255 caracteres, pero en este caso, de longitud variable. VARCHAR solo almacena la longitud del dato, permitiendo que el tamaño de la base de datos sea menor.</li>
+            <li><b>TINYTEXT </b>Texto de longitud variable que puede tener hasta 255 caracteres.</li>
+            <li><b>TEXT </b> Texto de longitud variable que puede tener hasta 65.535 caracteres.</li>
+            <li><b>MEDIUMTEXT </b> Texto de longitud variable que puede tener hasta 16.777.215 caracteres.</li>
+            <li><b>LONGTEXT </b> Texto de longitud variable que puede tener hasta 4.294.967.296 caracteres.</li>
+            <li><span>BLOB </span>Puede almacenar archivos o textos. En este caso contamos con los tipos TINYBLOB, BLOB, MEDIUMBLOB y LONGBLOB. La diferencia que tiene con los TEXT es que un tipo BLOB tiene en cuenta las mayusculas y minusculas.</li>
+            
+            <h2>Datos numericos</h2>
+
+            <p>En este tipo de campos solo pueden almacenarse numeros, positivos o negativos, enteros o decimales, en notacion hexadecimal, cientifica o decimal.</p>
+
+            <p>Los datos numericos tipo INTEGER admiten los atributos SIGNED y UNSIGNED. Tambien ZEROFILL.</p>
+
+            <li>SIGNED  Pueden tener valor negativo.</li>
+            <li>UNSIGNED  Pueden tener valor SOLAMENTE positivo.</li>
+            <li>ZEROFILL  Los numeros se completaran hasta la maxima capacidad disponible con ceros <br>Ejemplo: (columna INT(5) ZEROFILL => valor 23 se almacenara como 00023. Por el int(5) que indica que llene hasta 5 numeros.</li>
+
+
+
+            <h2>Tipos de datos numericos</h2>
+
+            <li><span>BIT or BOOL </span> Para un numero entero que puede ser 0 o 1.</li>
+            <li><span>TINYINT </span>Es un número entero con rango de valores válidos desde -128 a 127. Si se configura como unsigned (sin signo), el rango de valores es de 0 a 255.</li>
+            <li><span>SMALLINT </span>Para números enteros, con rango desde -32.768 a 32.767. Si se configura como unsigned, 0 a 65.535.
+            </li>
+            <li><span>MEDIUMINT </span>Para números enteros. El rango de valores va desde -8.388.608 a 8.388.607. Si se configura como unsigned, 0 a 16.777.215.</li>
+            <li><span>INT </span>Para almacenar números enteros, en un rango de -2.147.463.848 a 2.147.483.647. Si configuramos este dato como unsigned, el rango es 0 a 4.294.967.295.
+                </li>
+            <li><span>BIGINT </span>Número entero con rango de valores desde -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807.
+                Unsigned, desde 0 a 18.446.744.073.709.551.615.
+                 </li>
+            <li><span>FLOAT(m,d) </span>Representa números decimales. Podemos especificar cuántos dígitos (m) pueden utilizarse (término también conocido como ancho de pantalla), y cuántos en la parte decimal (d). MySQL redondeará el decimal para ajustarse a la capacidad.
+                </li>
+            <li><span>DOUBLE </span>Número de coma flotante de precisión doble. Es un tipo de datos igual al FLOAT cuya única diferencia es el rango numérico que abarca.
+                </li>
+
+                <li><span>DECIMAL:</span> Almacena los numeros como cadenas de texto.</li>
+
+            <h2>Tipos de datos "Fecha"</h2>
+
+            <li><span>DATE</span> Para almacenar fechas. El formato por defecto es YYYY-MM-DD desde 0000-00-00 a 9999-12-31 </li>
+            <li><span>DATETIME</span> Combinacion de fecha y hora. El rango de valores va desde el 1 de enero del 1001 a las 0 horas, 0 minutos y 0 segundos al 31 de diciembre del 9999 a las 23 horas, 59 minutos y 59  segundos. <span>El formato de almancenamiento es de: año-mes-dia-horas-minutos-segundos</span></li 
+            <li><span>TIME</span> Almacena una hora. El rango de horas va desde -838 horas (negativo), 59 minutos y 59 segundos a 838 horas, 59 minutos y 59 segundos. <b>El formato de almacenamiento es de HH:MM:SS</b> </li>
+            <li><span>YEAR</span> Almacena un año. El rango de valores permitidos va desde el año 1901 al año 2155. El campo puede tener tamaño dos o tamaño 4 dependiendo de si queremos almacenar un año con dos o cuatro digitos. YY or YYYY</li>
+
+
+            <hr><hr>
+                <a name="abajo" ></a>
+            <h2>Creacion de una base de datos</h2>
+
+            <p>Ejemplo: Para crear una base de datos con el nombre ComercioIT, la instruccion SQL a ejecutar sera:</p>
+
+<p><span>CREATE DATABASE ComercioIT;</span></p>
+
+<h2>Creacion de una tabla</h2>
+
+<p>La sentencia <span>CREATE TABLE</span> creara una tabla con las columnas (campos) que indiquemos.</p>
+
+<p>Ejemplo:</p>
+<p>A continuacion se muestra una instruccion SQL para la generacion de una tabla con el nombre <b>PRODUCTOS</b></p>
+<div><b>idProducto INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,</b></div>
+<div><span>CREATE TABLE Productos(</span>
+<div><b>Nombre VARCHAR(50) NOT NULL,</b></div>
+<div><b>Precio DOUBLE,</b>  </div>
+<div><b>Marca VARCHAR(30) NOT NULL,</b></div>
+<div><b>Categoria VARCHAR(30) NOT NULL,</b></div>
+<div><b>Stock INT(6) NOT NULL,</b></div>
+<div><b>Disponible BOOLEAN DEFAULT false</b></div>
+);</div>
+
+<p>Siempre cerrar con parentesis y punto y coma. <br> No olvidar colocar una "," al final de cada linea de codigo antes de cerrar la sentencia.</p>
+
+<h2>Eliminar una tabla</h2>
+
+<div><b>DROP TABLE Producto;</b></div>
+
+<div>o</div>
+
+<div><b>DROP TABLE IF EXISTS Productos;</b></div>
+
+
+
+<h2>Restricciones de las tablas</h2>
+
+<div><b>Puntos clave</b></div>
+<ol>
+    <li>Los nombres de las tablas deben ser unicos en la base de datos</li>
+    <li>Los nombres de las columnas debe ser unicos en la tabla. (al igual que una variable en un programa).</li>
+    <li>No podran existir dos regristros con el mismo valor de la clave primaria.</li>
+</ol>
+
+
+<div><b>Columnas No Descomponibles</b></div>
+<ol>
+    <li>Son aquellas columnas que contienen cierta informacion que no puede almacenarse en dos o mas columnas.</li>
+    
+        <li>Son faciles de actualizar.</li>
+    
+    <li>Son faciles de consultar</li>
+    <li>Mejoran la implementacion de la integridad de los datos.</li>
+</ol>
+
+
+
+<h2>Restricciones</h2>
+
+<li><b>NOT FULL</b> No permite valores nulos; la carga del dato en ese campo sera OBLIGATORIO. El campo no puede quedar vacio.</li>
+<li><b>DEFAULT</b> Permite especificar un valor predeterminado</li>
+<li><b>CLAVE PRIMARIA (PRIMARY KEY)</b> Una tabla suele tener una columna o una combinacion de columnas cuyos valores <b>identifican de forma unica</b> a cada registro de la tabla
+<p>Estas columnas se denominan claves principales de la tabla.<b> Una tabla so puede tener una restriccion PRIMARY KEY</b> y ninguna columna a la que se aplique una restriccion PRIMARY KEY puede aceptar valores NULL. Debido a que las restricciones PRIMARY KEY garantizan datos unicos, muchas veces se definen en una columna de identidad.</p> </li>
+
+
+
+<h2>Otros comandos MySQL</h2>
+
+
+<p>A continuacion, se detallan comandos necesarios para la navegacion dentro del motor MySQL</p>
+
+<li>SHOW DATABASES: Muestra el catalogo de base de datos del servidor. <br> <B>SHOW DATABASES;</B></li>
+
+<li>USE: Pone en uso una base de datos del servidor. Todos los comandos SQL que se ejecuten, se llevaran a cabo sobre la base de datos en uso. <br>
+  <b>USE BaseDeDatos2; </b> </li>
+
+
+  <li>SHOW TABLES: Muestra el catalogo o listado de tablas de la base de datos activa. <br> Sintaxis: <b>SHOW TABLES;</b></li>
+
+  <li>Comentarios: permiten escribir texto que no sera interpretado como parte de sentencias SQL, utiles para documentar y comentar acciones realizadas por las sentencias. Se pueden utilizar las siguientes formas de escribir comentarios:</li>
+
+  <b><li># Esto es un cometario de 1 linea (Propia de MySQL)</li>
+  <li>*/ Esto es un cometario de 1 o mas lineas */ (Soportada en MySQL y otros motores) </li>
+  <li>--  Esto es un cometario de 1 linea (Soportada en MySQL y otros motores)</li></b>
+
+  <li>DESCRIBE: Devuelve la descripcion de campos y detalles de una tabla (estructura fisica). <br> Sintaxis: <b>DESCRIBE NombreDeTabla</b></li>
+
+
+    <li>SHOW CHARSET: Muestra los CHARSET (juegos de caracteres) instalados. <br> Sintaxis  <b>SHOW CHARSET;</b></li>
+
+    <li>SHOW COLLATION: Muestra los COLLATIONS instalados. <br> <b>Sintaxis: SHOW COLLATION;</b></li>
+
+    
+    <h2>Conceptos avanzados (ENUM)</h2>
+
+    <p>Existe un tipo de dato denominado ENUM que presenta las siguientes caracteristicas:</p>
+
+    <li>Solo puede contener un valor.</li>
+    <li>Se puede definir unas lista de hasta 65.535 valores distintos.</li>
+    <li>Si se permiten valores null, este sera el valor predeterminado; si no se define un valor predeterminado con DEFAULT, sera el primer valor de la lista.</li>
+    <li>Cada valor de la lista es numerado con un indice (Comenzando en 1)</li>
+
+    <p>Ejemplo: </p>
+
+    <p><b>CREATE TABLE Medida (medida ENUM('pequeño', 'mediano', 'grande') NOT NLL DEFAULT 'mediano'); </b></p>
+
+
+
+
+    <h2>Conceptos Avanzados SET</h2>
+
+    <p>Otro tipo de dato es SET, el cual posee las siguientes caracteristicas:</p>
+     <li>0, 1 o varios valores.</li>
+     <li>Se puede definir unas lista de hasta 64 valores distintos.</li>
+     <li>Los valores no pueden contener comas, ya que los valores asignados en la lista estan separados por ese caracter.</li>
+     <li> Cada valor de la lista representa un bit de la cadena de bits del campo.</li>
+     <li>El valor decimal del campo determina los bits, marcando los valores que
+        contiene el campo, de manera que si todos los bits están a 1, es que ese
+        campo contiene todos los valores (por ej.: si el valor decimal es 7, en binario
+        sería 0111, y eso quiere decir que el campo contiene los valores ‘a’, ‘b’ y ‘c’).
+        </li>
+
+
+        <h2>Ejemplo de SET</h2>
+
+        <p>Tipo de dato SET - Ejemplo:</p>
+
+        <p><b>CREATE TABLE Letra (letra SET('a', 'b', 'c', 'd'));</b></p>
+
+
+
+
+
+
+
+    
+
+
+</body>
+</html>
